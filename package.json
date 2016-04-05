@@ -71,9 +71,6 @@
     "grunt-mocha-test": "~0.12.7",
     "grunt-mocha-istanbul": "^3.0.1",
     "istanbul": "^0.3.17",
-    "chai-as-promised": "^5.1.0",
-    "chai-things": "^0.2.0",
-    "sinon-chai": "^2.8.0",
     "jasmine-core": "^2.3.4",
     "karma-jasmine": "~0.3.0",
     "jasmine-spec-reporter": "^2.4.0",
@@ -86,7 +83,6 @@
     "requirejs": "~2.1.11",
     "karma-requirejs": "~0.2.2",
     "karma-jade-preprocessor": "0.0.11",
-    "karma-phantomjs-launcher": "~0.2.0",
     "karma": "~0.13.3",
     "karma-ng-html2js-preprocessor": "~0.1.2",
     "karma-spec-reporter": "~0.0.20",
@@ -95,11 +91,6 @@
   },
   "engines": {
     "node": ">=0.12.0"
-  },
-  "scripts": {
-    "start": "node server",
-    "test": "grunt test",
-    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
   "private": true
 }
