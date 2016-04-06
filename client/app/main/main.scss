@@ -1,4 +1,63 @@
-.thing-form {
+#zeta-container {
+  width: $zeta-container-width;
+  height: 100%;
+  position: relative;
+}
+#zeta-canvas {
+  width: $zeta-canvas-width;
+  height: 100%;
+  margin-top: 5%;
+  padding: 1% 0;
+  position: relative;
+  transform: translateX(0);
+  transition: .5s ease all;
+  overflow: auto;
+}
+
+#zeta-container.display-zeta-nav {
+  #zeta-canvas {
+    transform: translateX($zeta-menu-width);
+    //width: ($zeta-canvas-width - $zeta-menu-width);
+  }
+  #zeta-nav-header {
+    transform: translateX($zeta-menu-width);
+    transition: .5s ease all;
+  }
+  #zeta-nav-bar {
+    //transform-origin: 0 50%;
+    //transform: perspective(300px) rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+span.menu-icons {
+  font-size: 20px;
+  height: 20px;
+  width: 22px;
+  float: left;
+  margin: 10px 0px 10px 25px;
+  color: #fff;
+}
+span.the-btn {
+  float: right;
+  font-size: 20px;
+  height: 30px;
+  width: 43px;
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 0;
+  color: #fff;
+}
+
+
+/* .thing-form {
   margin: 20px 0;
 }
 
@@ -24,4 +83,4 @@
 
 .navbar-text {
   margin-left: 15px;
-}
+} */

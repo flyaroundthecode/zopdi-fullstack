@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
+<!-- <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
@@ -26,4 +26,20 @@
       </ul>
     </div>
   </div>
+</div> -->
+<div id="zeta-nav-bar">
+    <h2 id="title"><i class="fa fa-sitemap"></i>MENU</h2>
+    <ul id="toggle">
+        <li ng-repeat="(navItem, navDetail) in navbarConfig" ng-click="navSelectionHandler(navItem, navDetail)">
+            <div ng-class="{'active border': navItem == selectedNavItem}" class="nav-menu-item-container">
+                <span class="{{navDetail.iconClass}}"></span> <a ng-href="{{navDetail.targetUrl}}">{{navDetail.viewName}}</a>
+                <span class="the-btn" ng-class="{'fa fa-plus': !navDetail.isSubNavVisible, 'fa fa-minus': navDetail.isSubNavVisible}" ng-if="navDetail.subNav"></span>
+                <ul ng-show="navDetail.isSubNavVisible" ng-if="navDetail.subNav" ng-animate="'animate'" class="slider" ng-click="subNavSelectionHandler($event)">
+                    <li ng-repeat="subNavDetail in navDetail.subNav">
+                        <a ng-href="{{subNavDetail.targetUrl}}">{{subNavDetail.viewName}}</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
 </div>

@@ -1,0 +1,13 @@
+<nav id="zeta-nav-header"class="navbar navbar-default navbar-fixed-top">
+    <div class="row">
+        <div class="col-md-12" ng-if="!isLoggedIn()">
+            <a class="toggle-nav" id="bars" ng-click="toggleNavigation()"><i class="fa fa-bars"></i></a>
+            <div class="breadcrumb-area">
+                <div ncy-breadcrumb></div>
+            </div>
+        </div>
+        <div class="col-md-12" ng-if="isLoggedIn()">
+            <div><h3>Hiii</h3></div>
+        </div>
+    </div>
+</nav>

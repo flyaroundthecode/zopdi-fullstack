@@ -1,32 +1,35 @@
-<navbar></navbar>
+<!-- <navbar></navbar> -->
+<div id="zeta-container" ng-class="{'display-zeta-nav': isNavVisible}">
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
+  <fixed-header></fixed-header>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
+  <navbar></navbar>
+
+  <div id="zeta-canvas">
+    <div ui-view=""></div>
   </div>
 
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="main.newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="main.addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
 </div>
 
-<footer></footer>
+<!-- <div id="container" ng-class="{'display-nav': isNavVisible}">
+    <div id="nav" ng-controller="navigationController">
+        <h2 id="title"><i class="fa fa-sitemap"></i>MENU</h2>
+        <ul id="toggle">
+            <li ng-repeat="(navItem, navDetail) in navigationConfig" ng-click="navSelectionHandler(navItem, navDetail)">
+                <div ng-class="{'active border': navItem == selectedNavItem}" class="nav-menu-item-container">
+                    <span class="{{navDetail.iconClass}}"></span> <a ng-href="{{navDetail.targetUrl}}">{{navDetail.viewName}}</a>
+                    <span class="the-btn" ng-class="{'fa fa-plus': !navDetail.isSubNavVisible, 'fa fa-minus': navDetail.isSubNavVisible}" ng-if="navDetail.subNav"></span>
+                    <ul ng-show="navDetail.isSubNavVisible" ng-if="navDetail.subNav" ng-animate="'animate'" class="slider" ng-click="subNavSelectionHandler($event)">
+                        <li ng-repeat="subNavDetail in navDetail.subNav">
+                            <a ng-href="{{subNavDetail.targetUrl}}">{{subNavDetail.viewName}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="canvas">
+        <div ui-view></div>
+    </div>
+</div> -->

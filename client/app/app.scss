@@ -1,5 +1,5 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
@@ -17,7 +17,11 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 // Component styles are injected through grunt
 // injector
 @import 'admin/admin.scss';
+@import 'general.scss';
 @import 'main/main.scss';
+@import 'mixin.scss';
+@import 'variables.scss';
+@import '../components/fixed-header/fixed-header.scss';
 @import '../components/footer/footer.scss';
-@import '../components/modal/modal.scss';
+@import '../components/navbar/navbar.scss';
 // endinjector
