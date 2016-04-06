@@ -3,7 +3,7 @@
   height: 100%;
   background: $zeta-header-font-color;
   position: fixed;
-  //left: -300px;
+  left: -$zeta-menu-width;
   top: 0;
   transition: .5s ease all;
   transform: rotateY(-90deg);

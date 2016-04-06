@@ -26,7 +26,9 @@
   #zeta-nav-bar {
     //transform-origin: 0 50%;
     //transform: perspective(300px) rotateY(0deg);
-    transform: rotateY(0deg);
+    transform-origin:100% 50%;
+    transform: perspective(2*$zeta-menu-width) rotateY(0deg);
+    left: 0;
   }
 }
 
