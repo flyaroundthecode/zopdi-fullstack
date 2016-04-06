@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .factory('Auth', function Auth($http, User, $cookies, $q) {
     /**
      * Return a callback or noop function

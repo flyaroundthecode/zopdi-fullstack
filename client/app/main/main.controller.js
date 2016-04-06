@@ -27,7 +27,7 @@ function MainController($scope, $http, socket) {
   });
 }
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .controller('MainController', MainController);
 
 })();

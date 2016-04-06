@@ -305,7 +305,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'zopdiFullstackApp',
+        module: 'zetaApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

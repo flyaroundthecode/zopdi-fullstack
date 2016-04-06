@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('login', {

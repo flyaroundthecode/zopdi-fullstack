@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .directive('navbar', function () {
     return {
       templateUrl: 'components/navbar/navbar.html',

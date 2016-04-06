@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/zopdifullstack-dev'
+    uri: 'mongodb://localhost/zeta-dev'
   },
   sequelize: {
     uri: 'sqlite://',

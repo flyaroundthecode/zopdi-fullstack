@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .directive('footer', function () {
     return {
       templateUrl: 'components/footer/footer.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .controller('SignupCtrl', function($scope, Auth, $state) {
     $scope.user = {};
     $scope.errors = {};

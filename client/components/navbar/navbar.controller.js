@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .controller('NavbarCtrl', function ($scope, Auth) {
     $scope.menu = [{
       'title': 'Home',

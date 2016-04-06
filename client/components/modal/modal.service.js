@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('zopdiFullstackApp')
+angular.module('zetaApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal
