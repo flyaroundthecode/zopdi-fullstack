@@ -1,20 +1,45 @@
 #zeta-nav-header {
 	transition: .5s ease all;
 
+	a {
+		&:hover {
+			color: $zeta-header-font-hover-color;
+			text-decoration: none;
+		}
+		&:focus {
+			color: $zeta-header-font-hover-color;
+			text-decoration: none;
+		}
+	}
+
 	#bars {
 	  font-size: 2.5em;
-	  margin: 1% 1% 1% 5%;
+	  //margin: 1% 1% 1% 5%;
 	  color: $zeta-header-font-color;
-	  float:left;
+
 	  &:hover {
 	    color: $zeta-header-font-hover-color;
 	    cursor: pointer;
 	  }
 	}
 
-	.breadcrumb-area {
-		margin-top: 2%;
+	.guest-header, .logged-in-header {
+		.btn-default {
+			color: $zeta-header-font-color;
+			border-color: $zeta-header-font-color;
 
+			&:hover {
+				color: $zeta-header-font-hover-color;
+				border-color: $zeta-header-font-hover-color;
+				background-color: $zeta-header-background;
+			}
+		}
+	}
+
+	.breadcrumb-area {
+		margin-top: 15px;
+		float: left;
+		
 		.breadcrumb {
 			background: $zeta-global-background;
 			display: inline;

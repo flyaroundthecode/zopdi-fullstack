@@ -15,7 +15,7 @@ angular.module('zetaApp')
         })
         .then(function() {
           // Logged in, redirect to home
-          $state.go('main');
+          $state.go('main.home');
         })
         .catch(function(err) {
           $scope.errors.other = err.message;
