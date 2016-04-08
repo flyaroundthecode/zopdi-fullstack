@@ -3,10 +3,14 @@
 angular.module('zetaApp')
   .config(function($stateProvider) {
     $stateProvider
-      .state('main.home', {
-        url: 'home',
+      .state('home', {
+        url: '/home',
         templateUrl: 'app/home/home.html',
         controller: 'HomeCtrl',
-        controllerAs: 'home'
+        controllerAs: 'home',
+        authenticate: true,
+        ncyBreadcrumb: {
+          label: 'Home'
+        }
       });
   });

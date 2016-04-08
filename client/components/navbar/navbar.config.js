@@ -4,7 +4,8 @@ angular.module('zetaApp')
   .value('navbarConfig', {
     'home': {
         'viewName': 'HOME',
-        'targetUrl': '#',
+        'uiSref': 'home',
+        'targetUrl': '/',
         'iconClass': 'menu-icons fa fa-home'
     },
     'aboutus': {
@@ -15,10 +16,12 @@ angular.module('zetaApp')
         'subNav': [
             {
                 'viewName': 'OUR TEAM',
+                'uiSref': 'our-team',
                 'targetUrl': '#/about'
             },
             {
                 'viewName': 'OUR SERVICES',
+                'uiSref': 'our-services',
                 'targetUrl': '#'
             }
         ]
@@ -31,10 +34,12 @@ angular.module('zetaApp')
         'subNav': [
             {
                 'viewName': 'WEB DESIGN',
+                'uiSref': 'web-design',
                 'targetUrl': '#'
             },
             {
                 'viewName': 'GRAPHIC DESIGN',
+                'uiSref': 'graphic-design',
                 'targetUrl': '#'
             }
         ]

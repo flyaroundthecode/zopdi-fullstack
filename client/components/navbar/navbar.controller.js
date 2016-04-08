@@ -1,13 +1,8 @@
 'use strict';
 
 angular.module('zetaApp')
-  .controller('NavbarCtrl', function ($scope, Auth, navbarConfig) {
-    /*$scope.menu = [{
-      'title': 'Home',
-      'state': 'main'
-    }];*/
-
-    //$scope.isCollapsed = true;
+  .controller('NavbarCtrl', function ($scope, Auth, navbarConfig, $rootScope) {
+    
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;

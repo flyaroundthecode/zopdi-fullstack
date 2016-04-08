@@ -1,8 +1,8 @@
 'use strict';
 (function() {
 
-function MainController($state) {
-  //$state.go('main.home');
+function MainController() {
+  
 }
 
 angular.module('zetaApp')

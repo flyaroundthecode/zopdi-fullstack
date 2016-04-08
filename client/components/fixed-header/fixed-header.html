@@ -3,7 +3,7 @@
         <div class="col-md-12 logged-in-header" ng-if="isLoggedIn()">
             <div class="row">
                 <div class="col-md-1">
-                    <a class="toggle-nav pull-right" id="bars"><i class="fa fa-bars" ng-click="toggleNavigation()"></i></a>  
+                    <a class="toggle-nav pull-right" id="bars" ng-click="toggleNavigation()"><i class="fa fa-bars"></i></a>  
                 </div>
                 <div class="col-md-3">
                     <div class="breadcrumb-area">
@@ -18,11 +18,11 @@
         <div class="col-md-12 guest-header" ng-if="!isLoggedIn()">
         	<div class="row">
         		<div class="col-md-2 col-sm-3 col-xs-5 col-md-offset-1 col-sm-offset-1">
-        			<a class="toggle-nav" ui-sref="main.home"><h5><i class="fa fa-home"></i> Home</h5></a>
+        			<a class="toggle-nav" ui-sref="main"><h5><i class="fa fa-home"></i> Home</h5></a>
         		</div>
         		<div class="col-md-2 col-sm-3 col-xs-6 col-md-offset-7 col-sm-offset-5 col-xs-offset-1">
-        			<a class="toggle-nav" ui-sref="main.signup"><h6 class="btn btn-default">Sign up</h6></a>
-        			<a class="toggle-nav" ui-sref="main.login"><h6 class="btn btn-default">Login</h6></a>
+        			<a class="toggle-nav" ui-sref="signup"><h6 class="btn btn-default">Sign up</h6></a>
+        			<a class="toggle-nav" ui-sref="login"><h6 class="btn btn-default">Login</h6></a>
         		</div>
         	</div>
         </div>

@@ -1,50 +1,49 @@
-<div class="container">
+<div class="container settings-container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Change Password</h1>
-    </div>
-    <div class="col-sm-12">
+    <div class="col-sm-6 col-sm-offset-3">
       <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
+        <fieldset>
+        <legend>Change Password</legend>
+          <div class="form-group zeta-normal-text">
+            <label>Current Password</label>
 
-        <div class="form-group">
-          <label>Current Password</label>
+            <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
+                   mongoose-error/>
+            <p class="help-block" ng-show="form.password.$error.mongoose">
+                {{ errors.other }}
+            </p>
+          </div>
 
-          <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
-                 mongoose-error/>
-          <p class="help-block" ng-show="form.password.$error.mongoose">
-              {{ errors.other }}
-          </p>
-        </div>
+          <div class="form-group zeta-normal-text">
+            <label>New Password</label>
 
-        <div class="form-group">
-          <label>New Password</label>
+            <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
+                   ng-minlength="3"
+                   required/>
+            <p class="help-block"
+               ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
+              Password must be at least 3 characters.
+            </p>
+          </div>
 
-          <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword"
-                 ng-minlength="3"
-                 required/>
-          <p class="help-block"
-             ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
-            Password must be at least 3 characters.
-          </p>
-        </div>
+          <div class="form-group zeta-normal-text">
+            <label>Confirm New Password</label>
 
-        <div class="form-group">
-          <label>Confirm New Password</label>
+            <input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword"
+                   match="user.newPassword"
+                   ng-minlength="3"
+                   required=""/>
+            <p class="help-block"
+               ng-show="form.confirmPassword.$error.match && submitted">
+              Passwords must match.
+            </p>
 
-          <input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword"
-                 match="user.newPassword"
-                 ng-minlength="3"
-                 required=""/>
-          <p class="help-block"
-             ng-show="form.confirmPassword.$error.match && submitted">
-            Passwords must match.
-          </p>
+          </div>
 
-        </div>
+          <p class="help-block"> {{ message }} </p>
 
-        <p class="help-block"> {{ message }} </p>
-
-        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+          <button class="btn btn-default" type="submit">Save changes</button>
+        </fieldset>
       </form>
     </div>
   </div>

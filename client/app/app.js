@@ -37,7 +37,7 @@ angular.module('zetaApp', [
       // Intercept 401s and redirect you to login
       responseError: function(response) {
         if (response.status === 401) {
-          (state || (state = $injector.get('$state'))).go('main.login');
+          (state || (state = $injector.get('$state'))).go('login');
           // remove any stale tokens
           $cookies.remove('token');
           return $q.reject(response);
@@ -56,7 +56,7 @@ angular.module('zetaApp', [
         Auth.isLoggedIn(function(loggedIn) {
           if (!loggedIn) {
             event.preventDefault();
-            $state.go('main.login');
+            $state.go('login');
           }
         });
       }

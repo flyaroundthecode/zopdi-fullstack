@@ -3,31 +3,35 @@
 angular.module('zetaApp')
   .config(function($stateProvider) {
     $stateProvider
-      .state('main.login', {
-        url: 'login',
+      .state('login', {
+        url: '/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginCtrl'
       })
       .state('logout', {
-        url: 'logout?referrer',
-        referrer: 'main.home',
+        url: '/logout?referrer',
+        referrer: 'home',
         template: '',
         controller: function($state, Auth) {
-          var referrer = $state.params.referrer || $state.current.referrer || 'main.home';
+          var referrer = $state.params.referrer || $state.current.referrer || 'home';
           Auth.logout();
           $state.go(referrer);
         }
       })
-      .state('main.signup', {
-        url: 'signup',
+      .state('signup', {
+        url: '/signup',
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupCtrl'
       })
-      .state('main.settings', {
-        url: 'settings',
+      .state('settings', {
+        url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsCtrl',
-        authenticate: true
+        authenticate: true,
+        ncyBreadcrumb: {
+          parent: 'home',
+          label: 'Settings'
+        }
       });
   })
   .run(function($rootScope) {
