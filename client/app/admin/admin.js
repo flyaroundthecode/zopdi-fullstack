@@ -3,10 +3,14 @@
 angular.module('zetaApp')
   .config(function($stateProvider) {
     $stateProvider
-      .state('main.admin', {
-        url: 'admin',
+      .state('admin', {
+        url: '/admin',
         templateUrl: 'app/admin/admin.html',
         controller: 'AdminCtrl',
-        authenticate: true
+        authenticate: true,
+        ncyBreadcrumb: {
+          parent: 'home',
+          label: 'Admin'
+        }
       });
   });

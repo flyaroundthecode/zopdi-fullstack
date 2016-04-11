@@ -24,4 +24,14 @@ angular.module('zetaApp')
       $event.stopPropagation();
       $rootScope.isNavVisible = !$scope.isNavVisible;
     };
+
+    $scope.shouldNavItemVisible = function(navDetails) {
+      if(angular.isDefined(navDetails.accessLevel) && navDetails.accessLevel.indexOf($scope.getCurrentUser().role) > -1) {
+        return true;
+      } else if(angular.isUndefined(navDetails.accessLevel)) {
+        return true;
+      } else {
+        return false;
+      }
+    };
   });

@@ -44,9 +44,11 @@ angular.module('zetaApp')
             }
         ]
     },
-    'contact': {
-        'viewName': 'CONTACT',
-        'targetUrl': '#',
-        'iconClass': 'menu-icons fa fa-envelope'
+    'manage-users': {
+        'viewName': 'Manage Users',
+        'targetUrl': '/admin',
+        'uiSref': 'admin',
+        'iconClass': 'menu-icons fa fa-users',
+        'accessLevel': ['admin']
     }
   });
