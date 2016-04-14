@@ -4,10 +4,12 @@ angular.module('zetaApp')
   .controller('SignupCtrl', function($scope, Auth, roleConfig, $state) {
     $scope.user = {};
     $scope.errors = {};
+    $scope.success = {};
     $scope.roleConfig = roleConfig;
 
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
+    $scope.isSuccessMsgVisible = false;
 
     $scope.register = function(form) {
       $scope.submitted = true;
@@ -19,9 +21,15 @@ angular.module('zetaApp')
           password: $scope.user.password,
           role: $scope.user.role || 'user'
         })
-        .then(function() {
+        .then(function(user) {
           // Account created, redirect to home
-          $state.go('home');
+          //$state.go('home');
+          $scope.user = {};
+          $scope.submitted = false;
+          $scope.success = {
+            registration: 'User with email ' + user.email + ' registered successfully'
+          };
+          $scope.isSuccessMsgVisible = true;
         })
         .catch(function(err) {
           err = err.data;

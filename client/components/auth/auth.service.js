@@ -65,10 +65,10 @@ angular.module('zetaApp')
        */
       createUser: function(user, callback) {
         return User.save(user,
-          function(data) {
+          function(user) {
             //$cookies.put('token', data.token);
             //currentUser = User.get();
-            return safeCb(callback)(null);
+            return safeCb(callback)(user);
           },
           function(err) {
             this.logout();

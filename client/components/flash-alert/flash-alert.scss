@@ -1,0 +1,12 @@
+.zeta-flash-alert {
+   transition:all linear 1s;
+}
+
+.zeta-flash-alert {
+   .ng-hide {
+   		opacity: 0;
+   }
+   .ng-show {
+   		opacity:1;
+   }
+}
