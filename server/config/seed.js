@@ -39,9 +39,9 @@ Thing.find({}).removeAsync()
     });
   });
 
-User.find({}).removeAsync()
+User.find({email: {$in: ['test@example.com', 'admin@example.com']}}).removeAsync()
   .then(function() {
-    User.createAsync({
+    User.collection.insertAsync([{
       provider: 'local',
       name: 'Test User',
       email: 'test@example.com',
@@ -52,7 +52,7 @@ User.find({}).removeAsync()
       name: 'Admin',
       email: 'admin@example.com',
       password: 'admin'
-    })
+    }])
     .then(function() {
       console.log('finished populating users');
     });
