@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('zetaApp')
-  .controller('SignupCtrl', function($scope, Auth, $state) {
+  .controller('SignupCtrl', function($scope, Auth, roleConfig, $state) {
     $scope.user = {};
     $scope.errors = {};
+    $scope.roleConfig = roleConfig;
+
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
 
     $scope.register = function(form) {
       $scope.submitted = true;
@@ -12,11 +16,12 @@ angular.module('zetaApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          role: $scope.user.role || 'user'
         })
         .then(function() {
           // Account created, redirect to home
-          $state.go('main');
+          $state.go('home');
         })
         .catch(function(err) {
           err = err.data;

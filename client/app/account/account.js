@@ -6,14 +6,19 @@ angular.module('zetaApp')
       .state('login', {
         url: '/login',
         templateUrl: 'app/account/login/login.html',
-        controller: 'LoginCtrl'
+        controller: 'LoginCtrl',
+        resolve: {
+          isUserAuthenticated: function(Auth) {
+            return Auth.isLoggedIn(null);
+          }
+        }
       })
       .state('logout', {
         url: '/logout?referrer',
-        referrer: 'home',
+        referrer: 'main',
         template: '',
         controller: function($state, Auth) {
-          var referrer = $state.params.referrer || $state.current.referrer || 'home';
+          var referrer = $state.params.referrer || $state.current.referrer || 'main';
           Auth.logout();
           $state.go(referrer);
         }

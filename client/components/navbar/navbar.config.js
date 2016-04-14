@@ -50,5 +50,12 @@ angular.module('zetaApp')
         'uiSref': 'admin',
         'iconClass': 'menu-icons fa fa-users',
         'accessLevel': ['admin']
+    },
+    'register-user': {
+        'viewName': 'Register User',
+        'targetUrl': '/signup',
+        'uiSref': 'signup',
+        'iconClass': 'menu-icons fa fa-user-plus',
+        'accessLevel': ['admin']
     }
   });

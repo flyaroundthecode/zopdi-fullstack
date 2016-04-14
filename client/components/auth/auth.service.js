@@ -66,9 +66,9 @@ angular.module('zetaApp')
       createUser: function(user, callback) {
         return User.save(user,
           function(data) {
-            $cookies.put('token', data.token);
-            currentUser = User.get();
-            return safeCb(callback)(null, user);
+            //$cookies.put('token', data.token);
+            //currentUser = User.get();
+            return safeCb(callback)(null);
           },
           function(err) {
             this.logout();

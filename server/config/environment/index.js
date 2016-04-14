@@ -32,6 +32,9 @@ var all = {
     session: 'zeta-secret'
   },
 
+  //Idle session timeout period in minutes
+  idleTimeout: 30,
+
   // List of user roles
   userRoles: ['guest', 'user', 'admin'],
 

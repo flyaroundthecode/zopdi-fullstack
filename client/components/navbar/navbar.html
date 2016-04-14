@@ -6,8 +6,8 @@
                 <span class="{{navDetail.iconClass}}"></span> 
                 <a ui-sref="{{navDetail.uiSref}}" ng-if="navDetail.uiSref">{{navDetail.viewName}}</a>
                 <a ng-if="!navDetail.uiSref">{{navDetail.viewName}}</a>
-                <span class="the-btn" ng-class="{'fa fa-plus': !navDetail.isSubNavVisible, 'fa fa-minus': navDetail.isSubNavVisible}" ng-if="navDetail.subNav"></span>
-                <ul ng-show="navDetail.isSubNavVisible" ng-if="navDetail.subNav" ng-animate="'animate'" class="slider" ng-click="subNavSelectionHandler($event)">
+                <span class="the-btn" ng-class="{'fa fa-chevron-down': !navDetail.isSubNavVisible, 'fa fa-chevron-up': navDetail.isSubNavVisible}" ng-if="navDetail.subNav"></span>
+                <ul ng-show="navDetail.isSubNavVisible" ng-if="navDetail.subNav" ng-click="subNavSelectionHandler($event)">
                     <li ng-repeat="subNavDetail in navDetail.subNav">
                         <a ui-sref="{{subNavDetail.uiSref}}">{{subNavDetail.viewName}}</a>
                     </li>

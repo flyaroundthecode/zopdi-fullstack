@@ -62,6 +62,12 @@
             </p>
           </div>
 
+          <div ng-if="isLoggedIn() && isAdmin()" class="form-group zeta-normal-text" ng-class="{ 'has-success': form.role.$valid && submitted,
+                                              'has-error': form.role.$invalid && submitted }">
+            <label>Role</label>
+            <select name="role" class="form-control" ng-init="user.role=roleConfig.roles[0].id" ng-model="user.role" ng-options="role.id as role.viewName for role in roleConfig.roles"></select>
+          </div>
+
           <div align="center">
             <button class="btn btn-default" type="submit">
               Sign up

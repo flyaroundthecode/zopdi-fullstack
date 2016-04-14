@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('zetaApp')
-  .controller('LoginCtrl', function($scope, Auth, $state) {
+  .controller('LoginCtrl', function($scope, Auth, $state, isUserAuthenticated) {
     $scope.user = {};
     $scope.errors = {};
+
+    if(isUserAuthenticated){
+        $state.go('home');
+    }
 
     $scope.login = function(form) {
       $scope.submitted = true;
